@@ -16,16 +16,27 @@ public class CustomerController {
 	@Autowired
 	CustomerService customerService;
 	
-	@RequestMapping(value={"/"})
+@RequestMapping(value={"/", "/home", "loginauthenticate"})
 	public String sayHello(){
 		System.out.println("Welcome");
-		return "registration";	
+		return "home";	
 	}
 	
 	@RequestMapping(value="/addCustomer",method=RequestMethod.POST)
 	@ResponseBody
 	public String registerCustomer(Model model, Customer customer){
 		customerService.addCustomer(customer);
-		return "You have been registered.";
+		return "You have been registered";
+	}
+
+	
+	/*@RequestMapping ( value = "/login" , method = RequestMethod.GET)
+	public String loginCustomer(){
+		return "login";
+	}*/
+	
+	@RequestMapping ( value = "/registration" , method = RequestMethod.GET)
+	public String registerCustomer(){
+		return "registration";
 	}
 }

@@ -10,21 +10,21 @@
 </head>
 <body>
 	<h3>Please fill the registration Form</h3>
-	<form action="addCustomer" method="Post">
+	<form action="addUser" method="Post">
 	
-			<label for="customerName">Name</label>
-			<input name="customerName"   type="text" />
+			<label for="userName">User Name</label>
+			<input name="userName"   type="text" />
 			<br>
 			
-			<label for="customerAddress">Address</label>
-			<input name="address"  type="text" />
+			<label for="customerPassword">Password</label>
+			<input name="password"  type="password" />
 			<br>
-			<label for="customerPhone">Phone</label>
-			<input name="phone"  type="text" />
+			<label for="confirmPassword">Confirm Password</label>
+			<input name="confirm_password"  type="password" />
 			<br>
-			<label for="customerEmail">Email</label>
-			<input name="email"  type="text" />
+			<input name="authority.id" value = "1" type="hidden" />
 			<br>
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 			<input type="submit" value="Register" />
 	</form>
 </body>
