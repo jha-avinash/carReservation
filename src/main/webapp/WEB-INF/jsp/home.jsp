@@ -9,6 +9,6 @@
 </head>
 <body>
  <a href = "login" >Login</a>
- <p> Welcome 
+ <p> Welcome  ${ userName } </p>
 </body>
 </html>

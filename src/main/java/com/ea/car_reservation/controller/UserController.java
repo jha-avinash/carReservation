@@ -1,6 +1,5 @@
 package com.ea.car_reservation.controller;
 
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,8 +16,8 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	@RequestMapping(value="/addUser",method=RequestMethod.POST)
-	public String registerUser(Model model, User user, HttpSession session){
+	@RequestMapping(value="/addUser", method=RequestMethod.POST)
+	public String registerUser(Model model, User user){
 		userService.addUser(user);	
 		return "home";
 	}

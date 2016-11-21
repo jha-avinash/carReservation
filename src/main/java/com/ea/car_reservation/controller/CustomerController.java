@@ -1,5 +1,8 @@
 package com.ea.car_reservation.controller;
 
+import java.awt.Dialog.ModalExclusionType;
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,8 +20,14 @@ public class CustomerController {
 	CustomerService customerService;
 	
 @RequestMapping(value={"/", "/home", "loginauthenticate"})
-	public String sayHello(){
-		System.out.println("Welcome");
+	public String sayHello(Principal principal, Model model){
+	String userName = null;
+	if(principal != null)
+	{
+		userName = principal.getName();
+	}
+	model.addAttribute("userName", userName);
+	System.out.println( "Welcome " + userName);
 		return "home";	
 	}
 	
